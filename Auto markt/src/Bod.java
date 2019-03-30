@@ -1,19 +1,23 @@
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 
 
-
-public class Bod {
+public class Bod implements Comparable<Bod> {
     private Advertentie advertentie;
     private Koper koper;
     private int prijs;
     private LocalDateTime aanbodTijd;
     private boolean geaccepteerd = false;
 
-    public Bod(Advertentie advertentie, Koper koper, int prijs, LocalDateTime aanbodTijd) {
+    public Bod(Advertentie advertentie, Koper koper, int prijs) {
         this.advertentie = advertentie;
         this.koper = koper;
         this.prijs = prijs;
-        this.aanbodTijd = aanbodTijd;
+        this.aanbodTijd = LocalDateTime.now();
+    }
+
+    public Bod(){
     }
 
     public Advertentie getAdvertentie() {
@@ -54,5 +58,15 @@ public class Bod {
 
     public void setGeaccepteerd(boolean geaccepteerd) {
         this.geaccepteerd = geaccepteerd;
+    }
+
+    @Override
+    public int compareTo(Bod o) {
+        if(o.prijs > prijs)
+            return 1;
+        if(o.prijs < prijs)
+            return -1;
+        else
+            return 0;
     }
 }

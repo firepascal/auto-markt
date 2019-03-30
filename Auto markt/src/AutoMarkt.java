@@ -24,6 +24,13 @@ public class AutoMarkt {
     }
 
     public void voegBodToe(Bod bod, Koper koper){
-        koper.zetBodOpAuto(bod);
+        if(bod.getAdvertentie().getHoogsteBod().getPrijs() > bod.getPrijs()) {
+            koper.zetBodOpAuto(bod);
+            //TODO stuur een bericht naar alle andere kopers met een lager bod dat een hogere prijs geboden is
+        }
+    }
+
+    public void veranderAdvertentiePrijs(Advertentie advertentie, int prijs)    {
+        advertentie.setVraagprijs(prijs);
     }
 }
