@@ -6,18 +6,16 @@ public class Auto {
 private double vraagprijs;
 private String merk;
 private String type;
-private Enum brandstof;
 private LocalDate bouwdatum;
 private LocalDate aangeboden;
 private ArrayList biedingen;
 private String verkoper;
 
 
-    public Auto(double vraagprijs, String merk, String type, Enum brandstof, LocalDate bouwdatum, LocalDate aangeboden, ArrayList biedingen, String verkoper) {
+    public Auto(double vraagprijs, String merk, String type, LocalDate bouwdatum, LocalDate aangeboden, ArrayList biedingen, String verkoper) {
         this.vraagprijs = vraagprijs;
         this.merk = merk;
         this.type = type;
-        this.brandstof = brandstof;
         this.bouwdatum = bouwdatum;
         this.aangeboden = aangeboden;
         this.biedingen = biedingen;
@@ -46,14 +44,6 @@ private String verkoper;
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public Enum getBrandstof() {
-        return brandstof;
-    }
-
-    public void setBrandstof(Enum brandstof) {
-        this.brandstof = brandstof;
     }
 
     public LocalDate getBouwdatum() {
