@@ -286,6 +286,9 @@
     <configuration name="AutomarktApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AutomarktApp" />
       <module name="Auto markt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Application.Auto markt" />
