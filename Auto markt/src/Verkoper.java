@@ -1,13 +1,10 @@
-public class Verkoper {
-    private String Naam;
-    private String email;
+public class Verkoper extends Persoon{
     private int nummer;
     private boolean zichtbaar;
     private String iban;
 
     public Verkoper(String naam, String email, int nummer, boolean zichtbaar, String iban) {
-        Naam = naam;
-        this.email = email;
+        super(naam, email);
         this.nummer = nummer;
         this.zichtbaar = zichtbaar;
         this.iban = iban;
@@ -15,15 +12,11 @@ public class Verkoper {
 
 
     public String getNaam() {
-        return Naam;
+        return naam;
     }
 
     public void setNaam(String naam) {
-        Naam = naam;
-    }
-
-    public String getEmail() {
-        return email;
+        this.naam = naam;
     }
 
     public void setEmail(String email) {
