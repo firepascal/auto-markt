@@ -1,13 +1,18 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Verkoper extends Persoon{
     private int nummer;
     private boolean zichtbaar;
     private String iban;
+    public ArrayList<Advertentie> advertenties;
 
     public Verkoper(String naam, String email, int nummer, boolean zichtbaar, String iban) {
         super(naam, email);
         this.nummer = nummer;
         this.zichtbaar = zichtbaar;
         this.iban = iban;
+        advertenties = new ArrayList<>();
     }
 
 
@@ -45,5 +50,9 @@ public class Verkoper extends Persoon{
 
     public void setIban(String iban) {
         this.iban = iban;
+    }
+
+    public ArrayList getAdvertenties(){
+        return advertenties;
     }
 }

@@ -1,21 +1,13 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AutoMarkt {
     public ArrayList<Persoon> personen;
-    public ArrayList<Advertentie> advertenties;
-
+    public HashMap<Verkoper, Advertentie> advertenties;
 
     public AutoMarkt() {
         personen = new ArrayList<>();
-    }
-
-    public void zetBodOpAuto(Advertentie advertentie, int prijs, Koper koper){
-
-    }
-
-    public void biedAutoAan(int prijs, String merk, String type, int kilometerstand, EnumBrandstof brandstof, LocalDate bouwdatum, LocalDate aanbodTijd, Verkoper verkoper) {
-
     }
 
     public void voegPersoonToe(Persoon persoon){
@@ -23,5 +15,15 @@ public class AutoMarkt {
             personen.add(persoon);
         else
             System.out.println("ArrayList not found!");
+    }
+
+    public void biedAutoAan(int prijs, String merk, String type, int kilometerstand, EnumBrandstof brandstof, LocalDate bouwdatum, Verkoper verkoper) {
+        Advertentie advertentie = new Advertentie(prijs, merk, type, kilometerstand, bouwdatum, verkoper, brandstof);
+        verkoper.getAdvertenties().add(advertentie);
+        advertenties.put(verkoper, advertentie);
+    }
+
+    public void voegBodToe(Bod bod, Koper koper){
+        koper.zetBodOpAuto(bod);
     }
 }

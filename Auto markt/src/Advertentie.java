@@ -9,21 +9,21 @@ private String type;
 private int kilometerstand;
 private LocalDate bouwdatum;
 private LocalDate aangeboden;
-private ArrayList biedingen;
-private String verkoper;
+private ArrayList<Bod> biedingen;
+private Verkoper verkoper;
 private EnumBrandstof brandstof;
-private ArrayList<Bod> boden;
 
-
-    public Advertentie(double vraagprijs, String merk, String type, int kilometerstand, LocalDate bouwdatum, LocalDate aangeboden, ArrayList biedingen, String verkoper, EnumBrandstof brandstof) {
+    public Advertentie(double vraagprijs, String merk, String type, int kilometerstand, LocalDate bouwdatum, Verkoper verkoper, EnumBrandstof brandstof) {
         this.vraagprijs = vraagprijs;
         this.merk = merk;
         this.type = type;
+        this.kilometerstand = kilometerstand;
         this.bouwdatum = bouwdatum;
-        this.aangeboden = aangeboden;
-        this.biedingen = biedingen;
+        this.aangeboden = LocalDate.now();
         this.verkoper = verkoper;
         this.brandstof = brandstof;
+
+        biedingen = new ArrayList<>();
     }
 
     public double getVraagprijs() {
@@ -74,11 +74,11 @@ private ArrayList<Bod> boden;
         this.biedingen = biedingen;
     }
 
-    public String getVerkoper() {
+    public Verkoper getVerkoper() {
         return verkoper;
     }
 
-    public void setVerkoper(String verkoper) {
+    public void setVerkoper(Verkoper verkoper) {
         this.verkoper = verkoper;
     }
 
@@ -90,19 +90,15 @@ private ArrayList<Bod> boden;
         this.brandstof = brandstof;
     }
 
-    public ArrayList<Bod> getBoden() {
-        return boden;
-    }
-
-    public void setBoden(ArrayList<Bod> boden) {
-        this.boden = boden;
-    }
-
     public int getKilometerstand() {
         return kilometerstand;
     }
 
     public void setKilometerstand(int kilometerstand) {
         this.kilometerstand = kilometerstand;
+    }
+
+    public void voegBodToe(Bod bod){
+        biedingen.add(bod);
     }
 }
