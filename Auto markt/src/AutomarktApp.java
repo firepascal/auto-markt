@@ -4,7 +4,7 @@ import javafx.stage.Stage;
 public class AutomarktApp extends Application {
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Auto Markt");
+        stage.setTitle("Advertentie Markt");
         stage.show();
     }
 
