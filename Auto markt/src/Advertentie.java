@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Advertentie {
@@ -12,6 +13,7 @@ private LocalDate aangeboden;
 private ArrayList<Bod> biedingen;
 private Verkoper verkoper;
 private EnumBrandstof brandstof;
+private boolean verkocht = false;
 
     public Advertentie(double vraagprijs, String merk, String type, int kilometerstand, LocalDate bouwdatum, Verkoper verkoper, EnumBrandstof brandstof) {
         this.vraagprijs = vraagprijs;
@@ -24,6 +26,9 @@ private EnumBrandstof brandstof;
         this.brandstof = brandstof;
 
         biedingen = new ArrayList<>();
+    }
+
+    public Advertentie(){
     }
 
     public double getVraagprijs() {
@@ -98,7 +103,21 @@ private EnumBrandstof brandstof;
         this.kilometerstand = kilometerstand;
     }
 
+    public void setVerkocht()   {
+        verkocht = true;
+    }
+
     public void voegBodToe(Bod bod){
         biedingen.add(bod);
+    }
+
+    public Bod getHoogsteBod(){
+        Bod hoogsteBod = new Bod();
+        for (Bod bod : biedingen) {
+            if(bod.getPrijs() > hoogsteBod.getPrijs()) {
+                hoogsteBod = bod;
+            }
+        }
+        return hoogsteBod;
     }
 }

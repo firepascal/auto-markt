@@ -1,6 +1,3 @@
-public class EnumBrandstof {
-
-    public enum Brandstof{
+public enum EnumBrandstof {
         DIESEL, BENZINE, GAS, ELEKTRISCH
-    }
 }

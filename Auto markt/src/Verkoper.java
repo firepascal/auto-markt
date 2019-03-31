@@ -15,6 +15,9 @@ public class Verkoper extends Persoon{
         advertenties = new ArrayList<>();
     }
 
+    public Verkoper(){
+        super("", "");
+    }
 
     public String getNaam() {
         return naam;
